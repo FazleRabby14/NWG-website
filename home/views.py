@@ -6,3 +6,6 @@ def indexpage(request):
 
 def contactpage(request):
     return render(request, 'contact.html')
+
+def teampage(request):
+    return render(request, 'team.html')
