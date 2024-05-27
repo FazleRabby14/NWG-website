@@ -18,59 +18,259 @@
 
 
 <!-- component -->
-<header class='shadow-md font-sans tracking-wide relative z-50'>
-    <div class='flex flex-wrap fixed w-full items-center justify-between gap-4 px-10 py-4 bg-gradient-to-r from-sky-700 to-sky-800 hover:bg-gradient-to-l hover:from-sky-800 hover:to-sky-950 min-h-[70px]'>
-        <a href="javascript:void(0)" class="bg-transparent">
-            <img src="https://lh3.googleusercontent.com/proxy/-vkR2Ekch2qfd_kf4SLpv3y_S-7Z2Xw4FbxjItCpDmWKml7dKRhR6GTq9bzVxYJWbxZ7gvzA0sLXZkrApwk" alt="logo" class='w-48' />
-        </a>
-        <div id="collapseMenu"
-            class='max-lg:hidden lg:!block max-lg:before:fixed max-lg:before:bg-black max-lg:before:opacity-50 max-lg:before:inset-0 max-lg:before:z-50'>
-            <button id="toggleClose" class='lg:hidden fixed top-2 right-4 z-[100] rounded-full bg-white p-3'>
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 fill-black" viewBox="0 0 320.591 320.591">
+<header class='flex border-b  font-sans min-h-[70px] tracking-wide relative z-50  '>
+  <div class='flex fixed flex-wrap items-center justify-between px-10 py-3 gap-4 w-full bg-white border-b border-orange-500 shadow-md'>
+    <a href="javascript:void(0)"><img src="{% static 'image/networld-removebg-preview.png' %}" alt="logo" class='w-36' />
+    </a>
+
+    <div id="collapseMenu"
+      class='max-lg:hidden lg:!block max-lg:before:fixed max-lg:before:bg-black max-lg:before:opacity-50 max-lg:before:inset-0 max-lg:before:z-50'>
+      
+
+      <ul
+        class='lg:flex lg:gap-x-10 max-lg:space-y-3 max-lg:fixed max-lg:bg-white max-lg:w-1/2 max-lg:min-w-[300px] max-lg:top-0 max-lg:left-0 max-lg:p-6 max-lg:h-full max-lg:shadow-md max-lg:overflow-auto z-50'>
+        <li class='mb-6 hidden max-lg:block'>
+          <a href="javascript:void(0)"><img src="https://readymadeui.com/readymadeui.svg" alt="logo" class='w-36' />
+          </a>
+        </li>
+        <li class="group inline-block">
+          <button
+            class="outline-none focus:outline-none  px-3 py-1 bg-white rounded-sm flex items-center "
+          >
+          <a href="{% url 'index' %}" class="font-semibold flex-1">Home</a>
+          </button>
+          
+        </li>
+        <li class="group inline-block">
+              <button
+                class="outline-none focus:outline-none  px-3 py-1 bg-white rounded-sm flex items-center min-w-32"
+              >
+                <span class="pr-1 font-semibold flex-1">Products</span>
+                <span>
+                  <svg
+                    class="fill-current h-4 w-4 transform group-hover:-rotate-180
+                    transition duration-150 ease-in-out"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                  >
                     <path
-                        d="M30.391 318.583a30.37 30.37 0 0 1-21.56-7.288c-11.774-11.844-11.774-30.973 0-42.817L266.643 10.665c12.246-11.459 31.462-10.822 42.921 1.424 10.362 11.074 10.966 28.095 1.414 39.875L51.647 311.295a30.366 30.366 0 0 1-21.256 7.288z"
-                        data-original="#000000"></path>
-                    <path
-                        d="M287.9 318.583a30.37 30.37 0 0 1-21.257-8.806L8.83 51.963C-2.078 39.225-.595 20.055 12.143 9.146c11.369-9.736 28.136-9.736 39.504 0l259.331 257.813c12.243 11.462 12.876 30.679 1.414 42.922-.456.487-.927.958-1.414 1.414a30.368 30.368 0 0 1-23.078 7.288z"
-                        data-original="#000000"></path>
-                </svg>
-            </button>
-            <ul class='lg:flex lg:gap-x-5 max-lg:space-y-3 max-lg:fixed max-lg:bg-white max-lg:w-1/2 max-lg:min-w-[300px] max-lg:top-0 max-lg:left-0 max-lg:p-6 max-lg:h-full max-lg:shadow-md max-lg:overflow-auto z-50'>
-                
-                <li class='max-lg:border-b max-lg:py-3 px-3'>
-                    <a href='javascript:void(0)' class='hover:text-[#007bff] text-white block font-bold text-[15px]'>Home</a>
-                </li>
-                <li class='max-lg:border-b max-lg:py-3 px-3'>
-                    <a href="{% url 'team' %}" class='hover:text-[#007bff] text-white block font-bold text-[15px]'>Team</a>
-                </li>
-                <li class='max-lg:border-b max-lg:py-3 px-3'>
-                    <a href='javascript:void(0)' class='hover:text-[#007bff] text-white block font-bold text-[15px]'>Feature</a>
-                </li>
-                <li class='max-lg:border-b max-lg:py-3 px-3'>
-                    <a href='javascript:void(0)' class='hover:text-[#007bff] text-white block font-bold text-[15px]'>Blog</a>
-                </li>
-                <li class='max-lg:border-b max-lg:py-3 px-3'>
-                    <a href='javascript:void(0)' class='hover:text-[#007bff] text-white block font-bold text-[15px]'>About</a>
-                </li>
-                <li class='max-lg:border-b max-lg:py-3 px-3'>
-                    <a href='javascript:void(0)' class='hover:text-[#007bff] text-white block font-bold text-[15px]'>Contact</a>
-                </li>
-                <li class='max-lg:border-b max-lg:py-3 px-3'>
-                    <a href='javascript:void(0)' class='hover:text-[#007bff] text-white block font-bold text-[15px]'>Source</a>
-                </li>
-            </ul>
-        </div>
-        <div class='flex max-lg:ml-auto'>
-            <button id="toggleOpen" class='lg:hidden'>
-                <svg class="w-7 h-7" fill="#000" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd"
-                        d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                        clip-rule="evenodd"></path>
-                </svg>
-            </button>
-        </div>
+                      d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                    />
+                  </svg>
+                </span>
+              </button>
+              <ul
+                class="bg-white border rounded-sm transform scale-0 group-hover:scale-100 absolute 
+              transition duration-150 ease-in-out origin-top min-w-32"
+              >
+              <li class="rounded-sm relative px-3 py-1 hover:bg-gray-100">
+                <button
+                  class="w-full text-left flex items-center outline-none focus:outline-none"
+                >
+                  <span class="pr-1 flex-1">Cash Dispense ATM</span>
+                  <span class="mr-auto">
+                    <svg
+                      class="fill-current h-4 w-4
+                      transition duration-150 ease-in-out"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                      />
+                    </svg>
+                  </span>
+                </button>
+                <ul
+                  class="bg-white border rounded-sm absolute top-0 right-0 
+            transition duration-150 ease-in-out origin-top-left
+            min-w-32 cursor-pointer
+            "
+                >
+                  <li  class="px-3 py-1 hover:bg-gray-100">
+                    <a href="{% url 'productsDetails' %}">Sefserv-22 ATM</a> </li>
+                  <li class="px-3 py-1 hover:bg-gray-100">
+                    <a href="{% url 'productsDetails' %}">Sefserv-22e ATM</a></li>
+                  <li class="px-3 py-1 hover:bg-gray-100"> <a href="{% url 'productsDetails' %}">Sefserv-25 ATM</a></li>
+                  <li class="px-3 py-1 hover:bg-gray-100"> <a href="{% url 'productsDetails' %}">Sefserv-27 ATM</a></li>
+                  <li class="px-3 py-1 hover:bg-gray-100"> <a href="{% url 'productsDetails' %}">Sefserv SE Cash ATM</a></li>
+                </ul>
+              </li>
+              <li class="rounded-sm relative px-3 py-1 hover:bg-gray-100">
+                  <button
+                    class="w-full text-left flex items-center outline-none focus:outline-none"
+                  >
+                    <span class="pr-1 flex-1">Langauges</span>
+                    <span class="mr-auto">
+                      <svg
+                        class="fill-current h-4 w-4
+                        transition duration-150 ease-in-out"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                  <ul
+                    class="bg-white border rounded-sm absolute top-0 right-0 
+              transition duration-150 ease-in-out origin-top-left
+              min-w-32
+              "
+                  >
+                    <li class="px-3 py-1 hover:bg-gray-100">Javascript</li>
+                    
+                    <li class="px-3 py-1 hover:bg-gray-100">Go</li>
+                    <li class="px-3 py-1 hover:bg-gray-100">Rust</li>
+                  </ul>
+              </li>
+              <li class="rounded-sm relative px-3 py-1 hover:bg-gray-100">
+                  <button
+                    class="w-full text-left flex items-center outline-none focus:outline-none"
+                  >
+                    <span class="pr-1 flex-1">Langauges</span>
+                    <span class="mr-auto">
+                      <svg
+                        class="fill-current h-4 w-4
+                        transition duration-150 ease-in-out"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                  <ul
+                    class="bg-white border rounded-sm absolute top-0 right-0 
+              transition duration-150 ease-in-out origin-top-left
+              min-w-32
+              "
+                  >
+                    <li class="px-3 py-1 hover:bg-gray-100">Javascript</li>
+                    
+                    <li class="px-3 py-1 hover:bg-gray-100">Go</li>
+                    <li class="px-3 py-1 hover:bg-gray-100">Rust</li>
+                  </ul>
+              </li>
+              <li class="rounded-sm relative px-3 py-1 hover:bg-gray-100">
+                <button
+                  class="w-full text-left flex items-center outline-none focus:outline-none"
+                >
+                  <span class="pr-1 flex-1">Langauges</span>
+                  <span class="mr-auto">
+                    <svg
+                      class="fill-current h-4 w-4
+                      transition duration-150 ease-in-out"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                      />
+                    </svg>
+                  </span>
+                </button>
+                <ul
+                  class="bg-white border rounded-sm absolute top-0 right-0 
+            transition duration-150 ease-in-out origin-top-left
+            min-w-32
+            "
+                >
+                  <li class="px-3 py-1 hover:bg-gray-100">Javascript</li>
+                  
+                  <li class="px-3 py-1 hover:bg-gray-100">Go</li>
+                  <li class="px-3 py-1 hover:bg-gray-100">Rust</li>
+                </ul>
+              </li>
+              </ul>
+        </li>
+        <li class="group inline-block">
+          <button
+            class="outline-none focus:outline-none  px-3 py-1 bg-white rounded-sm flex items-center "
+          >
+          <a href="{% url 'team' %}" class="font-semibold flex-1">Team</a>
+          </button>
+          
+        </li> 
+        <li class="group inline-block">
+          <button
+            class="outline-none focus:outline-none  px-3 py-1 bg-white rounded-sm flex items-center "
+          >
+          <a href="{% url 'contact' %}" class="font-semibold flex-1">Contact</a>
+            
+          </button>
+          
+        </li>
+       
+        
+      </ul>
     </div>
+
+    <div class='flex items-center space-x-8 max-lg:ml-auto'>
+      <a href="https://drive.google.com/file/d/1bB8sD66BErag_HUGs8OSoXyix1qhxndt/view?usp=drive_link" target="_blank" class="flex bg-gradient-to-r from-blue-500 to-red-500 text-white px-6 py-2 text-xl rounded font-medium focus:ring ring-black ring-opacity-10 gradient element-to-rotate">
+        <div class="flex items-center">
+          Company ppt
+          <svg class="w-6 h-6 text-white ml-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
+          </svg>
+        </div>
+      </a>
+    </div>
+    
+    
+  </div>
 </header>
+<style>
+  /* since nested groupes are not supported we have to use 
+     regular css for the nested dropdowns 
+  */
+  li>ul                 { transform: translatex(100%) scale(0) }
+  li:hover>ul           { transform: translatex(101%) scale(1) }
+  li > button svg       { transform: rotate(-90deg) }
+  li:hover > button svg { transform: rotate(-270deg) }
+
+  /* Below styles fake what can be achieved with the tailwind config
+     you need to add the group-hover variant to scale and define your custom
+     min width style.
+  	 See https://codesandbox.io/s/tailwindcss-multilevel-dropdown-y91j7?file=/index.html
+  	 for implementation with config file
+  */
+  .group:hover .group-hover\:scale-100 { transform: scale(1) }
+  .group:hover .group-hover\:-rotate-180 { transform: rotate(180deg) }
+  .scale-0 { transform: scale(0) }
+  .min-w-32 { min-width: 8rem }
+
+  /*button animation*/
+  @layer utilities {
+    @keyframes gradientChange {
+        0% {
+            background-position: 0%
+        }
+
+        50% {
+            background-position: 100%
+        }
+
+        100% {
+            background-position: 0%
+        }
+    }
+
+    .gradient {
+        background: linear-gradient(90deg, blue, red);
+        background-size: 200% 200%;
+    }
+
+    .element-to-rotate {
+        animation: gradientChange 4s ease infinite;
+    }
+}
+</style>
+  
 <main>
 
 

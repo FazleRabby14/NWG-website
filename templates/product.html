@@ -7,7 +7,7 @@
 
     <ul class="grid gap-8 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:p-5">
         <!-- First four items (always visible) -->
-        <li class="relative bg-white flex flex-col justify-between border rounded shadow-md transition-transform transform-gpu hover:scale-105 hover:shadow-teal-400">
+        <li id="div1" class="animation-product relative bg-white flex flex-col justify-between border rounded shadow-md transition-transform transform-gpu hover:scale-105 hover:shadow-teal-400">
             <a class="relative" href="/tool/writey-ai">
                 <img class="rounded relative w-full h-[300px] object-cover aspect-video" src="https://southernstatesbank.net/wp-content/uploads/2021/04/woman-using-atm_t20_goBo9N-edited-scaled.jpg" alt="ATM" loading="lazy">
             </a>
@@ -23,7 +23,7 @@
             </div>
         </li>
 
-        <li class="relative bg-white flex flex-col justify-between border rounded shadow-md transition-transform transform-gpu hover:scale-105 hover:shadow-teal-400">
+        <li id="div2" class="animation-product relative bg-white flex flex-col justify-between border rounded shadow-md transition-transform transform-gpu hover:scale-105 hover:shadow-teal-400">
             <a class="relative" href="/tool/writey-ai">
                 <img class="rounded relative w-full h-[300px] object-cover aspect-video" src="https://png.pngtree.com/thumb_back/fh260/background/20230705/pngtree-illustration-of-payment-methods-through-pos-terminal-image_3749876.jpg" alt="POS" loading="lazy">
             </a>
@@ -39,7 +39,7 @@
             </div>
         </li>
 
-        <li class="relative bg-white flex flex-col justify-between border rounded shadow-md transition-transform transform-gpu hover:scale-105 hover:shadow-teal-400">
+        <li id="div3" class="animation-product relative bg-white flex flex-col justify-between border rounded shadow-md transition-transform transform-gpu hover:scale-105 hover:shadow-teal-400">
             <a class="relative" href="/tool/writey-ai">
                 <img class="rounded relative w-full h-[300px] object-cover aspect-video" src="https://www.acquisition-international.com/wp-content/uploads/2022/06/Digital-Bank.jpg" alt="Digital" loading="lazy">
             </a>
@@ -55,7 +55,7 @@
             </div>
         </li>
 
-        <li class="relative bg-white flex flex-col justify-between border rounded shadow-md transition-transform transform-gpu hover:scale-105 hover:shadow-teal-400">
+        <li id="div4" class="animation-product relative bg-white flex flex-col justify-between border rounded shadow-md transition-transform transform-gpu hover:scale-105 hover:shadow-teal-400">
             <a class="relative" href="/tool/writey-ai">
                 <img class="rounded relative w-full h-[300px] object-cover aspect-video" src="https://miro.medium.com/v2/resize:fit:1358/1*YEORJPSldBx9XdahQD1YzQ.jpeg" alt="Digital Banking Solutions (CONT.)" loading="lazy">
             </a>
@@ -255,9 +255,9 @@
 
     </ul>
 
-    <div class="flex justify-center">
-        <button id="showMoreBtn" class="group relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800">
-            <div class="flex ">
+    <div  class="flex justify-center">
+        <button id="showMoreBtn" class=" animation-product group relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800">
+            <div id="div5" class="flex">
                 <span class="relative flex px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
                     Show more
                     <svg class=" w-6 h-6 border border-black group-hover:border-white rounded-full mx-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
@@ -305,5 +305,44 @@ visibleItems.forEach((item, index) => {
 this.style.display = 'none';
 showMoreBtn.style.display = 'inline-block';
 });
+
+//animation
+document.addEventListener("DOMContentLoaded", function() {
+        const divs = document.querySelectorAll('.animation-product');
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('active');
+                    }, index * 100); // Adjust delay here (200 milliseconds = 0.2 seconds)
+                }
+            });
+        });
+
+        divs.forEach(div => {
+            observer.observe(div);
+        });
+    });
 </script>
+<style>
+   
+
+.animation-product {
+    opacity: 0;
+    transform: translatey(100%);
+    transition: opacity 2s ease, transform 2s ease;
+}
+
+
+    .animation-product.active {
+        opacity: 1;
+        transform: translateY(0);
+    }
+.animation-product.active {
+    opacity: 1;
+    transform: translatex(0);
+}
+
+</style>
 {% endblock %}

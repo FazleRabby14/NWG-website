@@ -41,9 +41,15 @@
             
         </div>
     </div>
-    <button id="back" class="absolute top-1/2 left-0 transform -translate-y-1/2  text-white p-2  rounded-full">←</button>
-    <button id="forward" class="absolute top-1/2 right-0 transform -translate-y-1/2  text-white p-2 rounded-full">→</button>
+    <button id="back" class="shadow-glow absolute top-1/2 left-0 transform -translate-y-1/2  text-white p-2  rounded-full">←</button>
+    <button id="forward" class="shadow-glow absolute top-1/2 right-0 transform -translate-y-1/2  text-white p-2 rounded-full">→</button>
 </div>
+
+<style>
+    .shadow-glow {
+        box-shadow: 0 0 10px 2px rgba(242, 250, 250, 0.5);
+    }
+    </style>
 
 <script>
    document.addEventListener('DOMContentLoaded', function() {

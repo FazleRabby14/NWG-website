@@ -9,3 +9,7 @@ def contactpage(request):
 
 def teampage(request):
     return render(request, 'team.html')
+
+def productpage(request):
+    return render(request, 'productsDetails.html')
+
