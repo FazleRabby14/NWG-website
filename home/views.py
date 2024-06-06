@@ -13,3 +13,9 @@ def teampage(request):
 def productpage(request):
     return render(request, 'productsDetails.html')
 
+def jobpostpage(request):
+    return render(request, 'post.html')
+
+def jobpage(request):
+    return render(request, 'alljob.html')
+

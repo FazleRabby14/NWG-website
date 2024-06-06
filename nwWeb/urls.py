@@ -24,5 +24,6 @@ urlpatterns = [
     path('contact/', views.contactpage),
     path('team/', views.teampage),
     path('productsDetails/', views.productpage),
-   
+    path('post/', views.jobpostpage),
+    path('alljob/', views.jobpage)
 ]
