@@ -77,11 +77,14 @@ WSGI_APPLICATION = 'nwWeb.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'networld',
+        'USER': 'root',
+        'HOST': 'localhost',
+        'PORT': '3306',
+        'PASSWORD': '',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -125,5 +128,17 @@ STATICFILES_DIRS = (
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
+
+
+
+
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = 'mail.networld-bd.com'
+EMAIL_PORT = '25'
+EMAIL_HOST_USER = 'info@networld-bd.com'
+EMAIL_HOST_PASSWORD = ''
+EMAIL_USE_TLS = False
+EMAIL_USE_SSL = False
+
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
