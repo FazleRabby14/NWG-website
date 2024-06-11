@@ -1,10 +1,27 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import get_object_or_404, render, redirect
 from .models import *
 from django.core.mail import send_mail
 
 # Create your views here.
+
 def indexpage(request):
-    return render(request, 'index.html')
+    # categories = Category.objects.all()
+    # items = {category.id: Product.objects.filter(category=category) for category in categories}
+    # items = Product.objects.all()
+    categories = Category.objects.prefetch_related('products').all()
+    context = {
+        'categories': categories,
+        
+    }
+    return render(request, 'index.html', context)
+
+
+
+
+def product_details(request, id):
+    product = get_object_or_404(Product, id=id)
+    return render(request, 'product_detail.html', {'product': product})
+
 
 def contactpage(request):
     return render(request, 'contact.html')

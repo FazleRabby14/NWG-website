@@ -27,7 +27,10 @@ urlpatterns = [
     path('team/', views.teampage),
     path('productsDetails/', views.productpage),
     path('post/', views.jobpostpage),
-    path('alljob/', views.jobpage)
+    path('alljob/', views.jobpage),
+    path('productsDetails/', views.productpage),
+    path('product/<int:id>/', views.product_details, name='productsDetails'),
+
 ]
 
 if settings.DEBUG:
